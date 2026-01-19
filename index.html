@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meta Monitoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <svg
+            class="logo-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="34"
+            height="20"
+            viewBox="0 0 34 20"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 6.58216L3.54514 6.94313C3.63571 5.05602 5.1926 3.55165 7.09656 3.55165H11.4551C13.4174 3.55165 15.011 5.14919 15.011 7.11695V8.11046L18.5562 8.47143V7.11695C18.5562 5.14919 20.1498 3.55165 22.1121 3.55165H26.4706C28.4329 3.55165 30.0266 5.14919 30.0266 7.11695V9.63921L33.5681 9.99981V6.69754C33.5681 3.00102 30.5754 0 26.8886 0H21.6942C19.9122 0 18.2916 0.701251 17.0944 1.84305H16.4737C15.2756 0.701251 13.6559 0 11.8739 0H6.67864C3.03036 0 0.0618808 2.93897 0 6.58216Z"
+              fill="white"
+              fill-opacity="0.8"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 10V13.3023C0 16.9987 2.9927 19.9998 6.67954 19.9998H11.8748C13.6568 19.9998 15.2765 19.2986 16.4746 18.1568H17.0953C18.2925 19.2986 19.9131 19.9998 21.6951 19.9998H26.8895C30.5377 19.9998 33.5071 17.0608 33.5681 13.4176L30.023 13.0567C29.9324 14.9438 28.3755 16.4482 26.4715 16.4482H22.113C20.1507 16.4482 18.5571 14.8506 18.5571 12.8829V11.8894L15.0119 11.5284V12.8829C15.0119 14.8506 13.4183 16.4482 11.456 16.4482H7.09745C5.1352 16.4482 3.54245 14.8506 3.54245 12.8829V10.3606L0 10Z"
+              fill="white"
+              fill-opacity="0.8"
+            />
+          </svg>
+          <span class="brand-name">Meta Monitoring</span>
+        </div>
+        <div class="controls">
+          <div class="tabs" role="tablist" aria-label="Диапазон">
+            <button class="tab" type="button" data-range="day">
+              День
+            </button>
+            <button class="tab" type="button" data-range="week">
+              Неделя
+            </button>
+            <button
+              class="tab is-active"
+              type="button"
+              data-range="month"
+              aria-pressed="true"
+            >
+              Месяц
+            </button>
+            <button class="tab" type="button" data-range="year">
+              Год
+            </button>
+            <button class="tab" type="button" data-range="all">
+              Все время
+            </button>
+          </div>
+          <button class="date-range" type="button">
+            <span>09.12.2024 &mdash; 09.01.2025</span>
+            <svg class="calendar-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path
+                d="M6 4V2.7M14 4V2.7M3.3 7h13.4M4.6 4h10.8c.8 0 1.3.5 1.3 1.3v10.1c0 .8-.5 1.3-1.3 1.3H4.6c-.8 0-1.3-.5-1.3-1.3V5.3c0-.8.5-1.3 1.3-1.3Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="chart-card" aria-label="График онлайна">
+          <div class="chart-blank">
+            <canvas class="chart-canvas" aria-hidden="true"></canvas>
+            <div class="chart-empty">Нет данных за выбранный период</div>
+            <div class="chart-tooltip" aria-hidden="true"></div>
+  
+          </div>
+        </section>
+
+        <section class="stats-list" aria-label="Сводка по серверам">
+          <article class="stats-card" data-server="s1.metarp.net:22005">
+            <div class="stat-block">
+              <p class="label">Сервер:</p>
+              <span class="pill green full" data-field="server"
+                >s1.metarp.net:22005</span
+              >
+            </div>
+            <div class="stat-block">
+              <p class="label">Средне</p>
+              <div class="stat-values">
+                <span class="pill" data-field="avg">11</span>
+                <span class="pill muted" data-field="avg-time"
+                  >06.01.2026 12:08</span
+                >
+              </div>
+            </div>
+            <div class="stat-block">
+              <p class="label">Максимум</p>
+              <div class="stat-values">
+                <span class="pill green" data-field="max">413</span>
+                <span class="pill muted" data-field="max-time"
+                  >09.01.2026 15:08</span
+                >
+              </div>
+            </div>
+            <div class="stat-block">
+              <p class="label">Текущий</p>
+              <div class="stat-values">
+                <span class="pill" data-field="current">0</span>
+                <span class="pill muted" data-field="current-time"
+                  >09.01.2026 15:08</span
+                >
+              </div>
+            </div>
+            <div class="stat-block">
+              <p class="label">Статус</p>
+              <div class="stat-values">
+                <span class="pill status" data-field="status">Работает</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="stats-card" data-server="s1.meta-rp.com:22005">
+            <div class="stat-block">
+              <p class="label">Сервер:</p>
+              <span class="pill blue full" data-field="server"
+                >s1.meta-rp.com:22005</span
+              >
+            </div>
+            <div class="stat-block">
+              <p class="label">Средне</p>
+              <div class="stat-values">
+                <span class="pill" data-field="avg">11</span>
+                <span class="pill muted" data-field="avg-time"
+                  >06.01.2026 12:08</span
+                >
+              </div>
+            </div>
+            <div class="stat-block">
+              <p class="label">Максимум</p>
+              <div class="stat-values">
+                <span class="pill blue" data-field="max">413</span>
+                <span class="pill muted" data-field="max-time"
+                  >09.01.2026 15:08</span
+                >
+              </div>
+            </div>
+            <div class="stat-block">
+              <p class="label">Текущий</p>
+              <div class="stat-values">
+                <span class="pill" data-field="current">0</span>
+                <span class="pill muted" data-field="current-time"
+                  >09.01.2026 15:08</span
+                >
+              </div>
+            </div>
+            <div class="stat-block">
+              <p class="label">Статус</p>
+              <div class="stat-values">
+                <span class="pill status" data-field="status">Работает</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
